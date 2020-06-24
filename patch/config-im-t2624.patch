@@ -1,0 +1,33 @@
+From 28e68cbcdacedfaec10a206d262d93bc3ac4bd40 Mon Sep 17 00:00:00 2001
+From: Yurii Hordynskyi <yuriih@interfacemasters.com>
+Date: Mon, 22 Jun 2020 14:27:25 +0000
+Subject: [PATCH] Add smbus/pmbus support for psu (spi800)
+
+Signed-off-by: Yurii Hordynskyi <yuriih@interfacemasters.com>
+---
+ debian/build/build_amd64_none_amd64/.config | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/debian/build/build_amd64_none_amd64/.config b/debian/build/build_amd64_none_amd64/.config
+index 3dccd93a..61a2c8b3 100644
+--- a/debian/build/build_amd64_none_amd64/.config
++++ b/debian/build/build_amd64_none_amd64/.config
+@@ -3949,11 +3949,12 @@ CONFIG_SENSORS_NCT6775=m
+ # CONFIG_SENSORS_NCT7802 is not set
+ # CONFIG_SENSORS_NCT7904 is not set
+ CONFIG_SENSORS_PCF8591=m
+-CONFIG_PMBUS=m
+-CONFIG_SENSORS_PMBUS=m
++CONFIG_PMBUS=y
++CONFIG_SENSORS_PMBUS=y
+ # CONFIG_SENSORS_ADM1275 is not set
+ CONFIG_SENSORS_LM25066=m
+-# CONFIG_SENSORS_LTC2978 is not set
++CONFIG_SENSORS_LTC2978=m
++CONFIG_SENSORS_LTC2978_REGULATOR=y
+ # CONFIG_SENSORS_LTC3815 is not set
+ # CONFIG_SENSORS_MAX16064 is not set
+ # CONFIG_SENSORS_MAX20751 is not set
+-- 
+2.17.1
+
